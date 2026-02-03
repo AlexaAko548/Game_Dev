@@ -16,7 +16,7 @@
 
 ---
 
-## 🎮 Activity 1: Simple Scene with a Moving Node
+## 🎮 Week 1: Simple Scene with a Moving Node
 **Date:** February 2026
 
 ### Description
@@ -28,8 +28,6 @@ This project demonstrates a basic Godot 2D scene featuring a "Hello World" label
 - **Scripting:** Uses `_process(delta)` to update coordinates every frame.
 
 ### Screenshots
-![Activity 1 Screenshot](activity_1/ss1.png)
+![Activity 1 Screenshot](activity-1/ss1.png)
 
 ---
-
-ty3_gameplay.png)

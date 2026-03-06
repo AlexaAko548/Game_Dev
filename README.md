@@ -30,4 +30,18 @@ This project demonstrates a basic Godot 2D scene featuring a "Hello World" label
 ### Screenshots
 ![Activity 1 Screenshot](activity-1/ss1.png)
 
+
+## 🎮 Week 2: Activity 1
+**Date:** February 2026
+
+### Description
+This project handles input (keyboard/gamepad), physics bodies (rigid/kinematic), collision detection. Basics of player controllers (movement, jumping).
+
+### Features
+- **Frog Player:** Added a frog player from an asset i got online.
+- **Scripting:** Added a script for the player's movements such as running, walking, jumping, and idle.
+
+### Screenshots
+![Activity 1 Screenshot](screenshots/week2-act1.png)
+
 ---

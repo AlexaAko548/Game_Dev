@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cmr6ydimlvemv"]
+
+[ext_resource type="Script" uid="uid://c56vslthtrg4i" path="res://scenes/spike.gd" id="1_7a7y0"]
+[ext_resource type="Texture2D" uid="uid://d0cejb3xponid" path="res://assets/images/traps/Idle.png" id="1_ljd5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a7y0"]
+atlas = ExtResource("1_ljd5v")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2mqm"]
+atlas = ExtResource("1_ljd5v")
+region = Rect2(8, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cx2lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a7y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2mqm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60m7a"]
+size = Vector2(26, 18)
+
+[node name="Area2D3" type="Area2D" unique_id=1269697736]
+position = Vector2(14, 9)
+script = ExtResource("1_7a7y0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1263906049]
+texture_filter = 1
+position = Vector2(497.99997, 652)
+scale = Vector2(3.624994, 2.5625038)
+sprite_frames = SubResource("SpriteFrames_cx2lw")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1602598690]
+position = Vector2(496, 663)
+shape = SubResource("RectangleShape2D_60m7a")
+
+[node name="Timer" type="Timer" parent="." unique_id=739249225]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

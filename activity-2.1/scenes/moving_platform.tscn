@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b71yhxv37ts6v"]
+
+[ext_resource type="Texture2D" uid="uid://ckej15t3j8t0q" path="res://assets/images/Grey Off.png" id="1_ms375"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tdcd"]
+size = Vector2(96, 18)
+
+[sub_resource type="Animation" id="Animation_mb26n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_afg43"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(180, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pgg5x"]
+_data = {
+&"RESET": SubResource("Animation_mb26n"),
+&"move": SubResource("Animation_afg43")
+}
+
+[node name="MovingPlatform" type="Node2D" unique_id=27370648]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=198300729]
+position = Vector2(180, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1908037524]
+texture_filter = 1
+position = Vector2(51.75, 13.25)
+scale = Vector2(3.140625, 2.4375)
+texture = ExtResource("1_ms375")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=795465928]
+position = Vector2(53, 14)
+shape = SubResource("RectangleShape2D_1tdcd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2072035697]
+libraries/ = SubResource("AnimationLibrary_pgg5x")
+autoplay = &"move"

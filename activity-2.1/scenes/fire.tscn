@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://20k8nwdh4nvn"]
+
+[ext_resource type="Texture2D" uid="uid://dvsg08qdkagp0" path="res://assets/images/traps/On (16x32).png" id="1_52nqi"]
+[ext_resource type="Script" uid="uid://crod8o3dpxfj2" path="res://scenes/fire.gd" id="1_xqmqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqmqg"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5mbl"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rach5"]
+atlas = ExtResource("1_52nqi")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txieb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqmqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5mbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rach5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52nqi"]
+size = Vector2(40, 62)
+
+[node name="Area2D" type="Area2D" unique_id=1123720658]
+position = Vector2(227, 88)
+script = ExtResource("1_xqmqg")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=81609204]
+position = Vector2(10, 15.999998)
+scale = Vector2(2.2500002, 1.9999999)
+sprite_frames = SubResource("SpriteFrames_txieb")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171983186]
+position = Vector2(10, 17)
+shape = SubResource("RectangleShape2D_52nqi")
+
+[node name="Timer" type="Timer" parent="." unique_id=234062260]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

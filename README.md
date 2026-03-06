@@ -28,7 +28,7 @@ This project demonstrates a basic Godot 2D scene featuring a "Hello World" label
 - **Scripting:** Uses `_process(delta)` to update coordinates every frame.
 
 ### Screenshots
-![Activity 1 Screenshot](activity-1/ss1.png)
+![Week1 - Activity 1 Screenshot](activity-1/ss1.png)
 
 
 ## 🎮 Week 2: Activity 1
@@ -38,10 +38,26 @@ This project demonstrates a basic Godot 2D scene featuring a "Hello World" label
 This project handles input (keyboard/gamepad), physics bodies (rigid/kinematic), collision detection. Basics of player controllers (movement, jumping).
 
 ### Features
-- **Frog Player:** Added a frog player from an asset i got online.
-- **Scripting:** Added a script for the player's movements such as running, walking, jumping, and idle.
+- Added a frog player from an asset i got online.
+- Added a script for the player's movements such as running, walking, jumping, and idle.
 
 ### Screenshots
-![Activity 1 Screenshot](screenshots/week2-act1.png)
+![Week 2 - Activity 1 Screenshot](screenshots/week2-act1.png)
+
+
+## 🎮 Week 2: Activity 2 Level Design
+**Date:** February 2026
+
+### Description
+This project uses tilemaps for grid-based levels, adding hazards (spikes/traps), designing flow (pacing, difficulty curves). Level 1 is noticeable easier than level 2. Implemented traps. No HP, once caught in trap restart from the beginning of the level. There is a notification when entering level 2.
+
+### Features
+- Added a background for the game
+- Added tiles through Tilemap
+- Incorporated traps and collectibles
+
+### Screenshots
+![Week 2 - Activity 2 Screenshot](screenshots/week2-act2.png)
+![Week 2 - Activity 2 Screenshot](screenshots/week2-act2.1.png)
 
 ---

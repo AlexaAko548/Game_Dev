@@ -1,13 +1,14 @@
 extends Area2D
-@onready var timer: Timer = $Timer
-
-
+# Using an export variable means you can click on the spike or fire in the Inspector
+# and change how much damage it does without opening the script again!
+@export var damage_amount: int = 100
 
 func _on_body_entered(body: Node2D) -> void:
+	# Check if the thing that touched the trap is the Player
 	if body.is_in_group("Player"):
-		print("You died!")
-		timer.start()
-
-
-func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+		
+		# Check if the Player actually has the take_damage function
+		if body.has_method("take_damage"):
+			
+			# Apply the damage!
+			body.take_damage(damage_amount)

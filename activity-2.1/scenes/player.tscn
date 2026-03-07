@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dw6shg57lhdgx" path="res://assets/images/player/Hit (32x32).png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://crstxas6i7av1" path="res://assets/images/player/Idle (32x32).png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dbrnqct6xop1b" path="res://assets/images/player/Run (32x32).png" id="5_fjrip"]
+[ext_resource type="AudioStream" uid="uid://cc0jiwyo04q6g" path="res://assets/sounds/jump.wav" id="6_fjrip"]
+[ext_resource type="AudioStream" uid="uid://bpgbxhxg1gamy" path="res://assets/sounds/hurt.wav" id="7_smehm"]
+[ext_resource type="AudioStream" uid="uid://cos43m3ls1fnu" path="res://assets/sounds/death.wav" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_qlg0r")
@@ -201,7 +204,7 @@ animations = [{
 "speed": 20.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_ujl30")
 }, {
 "duration": 1.0,
@@ -255,9 +258,20 @@ texture_filter = 1
 position = Vector2(36, 35.5)
 scale = Vector2(3.25, 3.21875)
 sprite_frames = SubResource("SpriteFrames_t4otl")
-animation = &"running"
+animation = &"hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393516782]
 position = Vector2(34, 40.5)
 scale = Vector2(3.25, 3.21875)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="jumpSound" type="AudioStreamPlayer2D" parent="." unique_id=711772042]
+stream = ExtResource("6_fjrip")
+bus = &"SFX"
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="." unique_id=2059520115]
+stream = ExtResource("7_smehm")
+bus = &"SFX"
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="." unique_id=65217526]
+stream = ExtResource("8_smehm")

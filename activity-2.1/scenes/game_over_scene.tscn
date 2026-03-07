@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://k8w8n74upoqa"]
+
+[ext_resource type="Script" uid="uid://dk01us3auvg2l" path="res://game_over_scene.gd" id="1_ny7m6"]
+[ext_resource type="FontFile" uid="uid://dlwdg0uuth3dp" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_k0nam"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_weh2h"]
+font = ExtResource("2_k0nam")
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jy0sy"]
+bg_color = Color(4.704781e-06, 0.36809698, 0.058169045, 1)
+
+[node name="GameOverScene" type="CanvasLayer" unique_id=376501569]
+script = ExtResource("1_ny7m6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1130376916]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7490196)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=858041019]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1598177941]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_weh2h")
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=969877206]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_jy0sy")
+text = "Restart Level"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

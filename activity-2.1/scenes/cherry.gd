@@ -1,14 +1,21 @@
 extends Area2D
-@onready var game_manager: Node = %GameManager
 
 
 
 func _on_body_entered(body: Node2D) -> void:
-	# 2. Check if the thing collecting the cherry is the Player
+	# Check if the player touched it
 	if body.is_in_group("Player"):
+		# 1. Turn off collision so the player can't grab it twice
+		$CollisionShape2D.set_deferred("disabled", true)
 		
-		# 3. Tell the Game Manager to run the add_point function!
-		game_manager.add_point()
+		# 2. Make the cherry turn invisible instantly
+		visible = false 
 		
-		# 4. Delete the cherry from the level so it can't be collected again
+		# 3. Play the sound
+		$pickupSound.play()
+		
+		# 4. Wait for the audio file to completely finish playing
+		await $pickupSound.finished
+		
+		# 5. Now it is safe to delete the cherry
 		queue_free()

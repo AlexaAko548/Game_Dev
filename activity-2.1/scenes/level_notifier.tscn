@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bvk1d7allp54c"]
+
+[ext_resource type="Script" uid="uid://c3e4rw4upsf8q" path="res://level_notifier.gd" id="1_hpcr0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c7eyb"]
+font_size = 40
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelNotifier" type="CanvasLayer" unique_id=1257329645]
+script = ExtResource("1_hpcr0")
+
+[node name="Label" type="Label" parent="." unique_id=801125207]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -18.0
+offset_right = 73.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level Name"
+label_settings = SubResource("LabelSettings_c7eyb")

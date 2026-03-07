@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cipddwfbya31d"]
+
+[ext_resource type="Script" uid="uid://y6ofch1kg6gv" path="res://scenes/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=167097393]
+script = ExtResource("1_ahhtf")
+
+[node name="Control" type="Control" parent="." unique_id=613466162]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1756045281]
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 52.0
+
+[node name="Label" type="Label" parent="Control" unique_id=154609037]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_bottom = 56.0
+grow_horizontal = 0
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1

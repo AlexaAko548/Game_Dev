@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5m32c26cpaia" path="res://assets/images/collectables/Cherries.png" id="1_dmcy2"]
 [ext_resource type="Script" uid="uid://c6enxuvahup87" path="res://scenes/cherry.gd" id="1_e05bo"]
+[ext_resource type="AudioStream" uid="uid://h5qunkfht3y3" path="res://assets/sounds/collect_apple.wav" id="3_3f1j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmcy2"]
 atlas = ExtResource("1_dmcy2")
@@ -147,5 +148,9 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=13150433]
 position = Vector2(145, 309)
 shape = SubResource("CircleShape2D_mjw4a")
+
+[node name="pickupSound" type="AudioStreamPlayer2D" parent="." unique_id=1508727858]
+stream = ExtResource("3_3f1j4")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

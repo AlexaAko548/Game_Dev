@@ -50,8 +50,4 @@ autoplay = "default"
 position = Vector2(10, 17)
 shape = SubResource("RectangleShape2D_52nqi")
 
-[node name="Timer" type="Timer" parent="." unique_id=234062260]
-unique_name_in_owner = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

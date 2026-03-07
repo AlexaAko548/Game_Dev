@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c7cdvpq1ixqw"]
 
+[ext_resource type="PackedScene" uid="uid://bvk1d7allp54c" path="res://scenes/level_notifier.tscn" id="1_76toy"]
 [ext_resource type="Texture2D" uid="uid://p4mhtble6gtt" path="res://assets/images/background/Green.png" id="1_alqfr"]
 [ext_resource type="Texture2D" uid="uid://deiyooyut521v" path="res://assets/images/terrain/Terrain (16x16).png" id="2_3opl0"]
 [ext_resource type="PackedScene" uid="uid://dat3mxqhm8ung" path="res://scenes/player.tscn" id="3_dc5vx"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b71yhxv37ts6v" path="res://scenes/moving_platform.tscn" id="8_bo4dx"]
 [ext_resource type="PackedScene" uid="uid://dtilg1jn3nl0a" path="res://scenes/finish.tscn" id="9_4k5bj"]
 [ext_resource type="Script" uid="uid://b4i7do2o4776u" path="res://game_manager.gd" id="10_hp87d"]
+[ext_resource type="PackedScene" uid="uid://cipddwfbya31d" path="res://scenes/hud.tscn" id="12_8g4ke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("2_3opl0")
@@ -213,6 +215,8 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="SceneObjects" type="Node" parent="." unique_id=992584997]
 
+[node name="LevelNotifier" parent="SceneObjects" unique_id=1257329645 instance=ExtResource("1_76toy")]
+
 [node name="TextureRect" type="TextureRect" parent="SceneObjects" unique_id=796278140]
 texture_filter = 1
 anchors_preset = -1
@@ -348,21 +352,4 @@ position = Vector2(2640, 271)
 unique_name_in_owner = true
 script = ExtResource("10_hp87d")
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=106036364]
-
-[node name="Panel" type="Panel" parent="UI" unique_id=282339590]
-offset_left = 27.0
-offset_top = 22.0
-offset_right = 261.0
-offset_bottom = 111.0
-
-[node name="PointsLabel" type="Label" parent="UI/Panel" unique_id=410397519]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 51.0
-offset_top = 25.0
-offset_right = 175.0
-offset_bottom = 67.0
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="HUD" parent="." unique_id=167097393 instance=ExtResource("12_8g4ke")]

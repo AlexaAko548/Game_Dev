@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dcwrnlpypp60j"]
+
+[ext_resource type="Script" uid="uid://d4kv065lh2fvy" path="res://character_body_2d.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://cft5jnle4u0ce" path="res://assets/images/player/slime_green.png" id="2_4ra3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipns3"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("2_4ra3w")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1ycm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md484")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipns3")
+}],
+"loop": true,
+"name": &"aggro",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}],
+"loop": true,
+"name": &"enemy",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shcg2"]
+size = Vector2(59, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ile5s"]
+size = Vector2(69, 67)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 116.01724
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1713127928]
+position = Vector2(1326, 403)
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1009003615]
+position = Vector2(47, 58.000004)
+scale = Vector2(2.9999998, 3.9583333)
+sprite_frames = SubResource("SpriteFrames_s1ycm")
+animation = &"aggro"
+autoplay = "enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247380945]
+position = Vector2(51.5, 73.5)
+shape = SubResource("RectangleShape2D_shcg2")
+metadata/_edit_group_ = true
+
+[node name="HitBox" type="Area2D" parent="." unique_id=703258322]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=2075429998]
+position = Vector2(52.5, 74.5)
+shape = SubResource("RectangleShape2D_ile5s")
+metadata/_edit_group_ = true
+
+[node name="LedgeCheck" type="RayCast2D" parent="." unique_id=1967693279]
+position = Vector2(45, 84)
+target_position = Vector2(51, 1)
+metadata/_edit_group_ = true
+
+[node name="WallCheck" type="RayCast2D" parent="." unique_id=912695316]
+position = Vector2(45, 84)
+target_position = Vector2(-42, 1)
+metadata/_edit_group_ = true
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=1616808857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=912712388]
+position = Vector2(49, 67)
+shape = SubResource("CircleShape2D_md0e3")
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]

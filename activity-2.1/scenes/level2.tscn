@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dat3mxqhm8ung" path="res://scenes/player.tscn" id="3_dc5vx"]
 [ext_resource type="PackedScene" uid="uid://d3rgw28p1tm7y" path="res://scenes/cherry.tscn" id="4_s8oj7"]
 [ext_resource type="PackedScene" uid="uid://cmr6ydimlvemv" path="res://scenes/spike.tscn" id="5_mw4xc"]
-[ext_resource type="PackedScene" uid="uid://20k8nwdh4nvn" path="res://scenes/fire.tscn" id="6_xa7n4"]
 [ext_resource type="PackedScene" uid="uid://dxl18d210abxm" path="res://scenes/worldB.tscn" id="7_lwvnx"]
+[ext_resource type="PackedScene" uid="uid://dcwrnlpypp60j" path="res://scenes/enemy.tscn" id="8_8g4ke"]
 [ext_resource type="PackedScene" uid="uid://b71yhxv37ts6v" path="res://scenes/moving_platform.tscn" id="8_bo4dx"]
 [ext_resource type="PackedScene" uid="uid://dtilg1jn3nl0a" path="res://scenes/finish.tscn" id="9_4k5bj"]
 [ext_resource type="Script" uid="uid://b4i7do2o4776u" path="res://game_manager.gd" id="10_hp87d"]
@@ -296,15 +296,6 @@ position = Vector2(3384, 45)
 [node name="world_b" parent="SceneObjects/Traps" unique_id=1589928311 instance=ExtResource("7_lwvnx")]
 position = Vector2(2931, 707)
 
-[node name="spike" parent="SceneObjects/Traps" unique_id=1269697736 instance=ExtResource("5_mw4xc")]
-position = Vector2(16, 0)
-
-[node name="spike2" parent="SceneObjects/Traps" unique_id=2026306206 instance=ExtResource("5_mw4xc")]
-position = Vector2(44, -1)
-
-[node name="spike3" parent="SceneObjects/Traps" unique_id=843878513 instance=ExtResource("5_mw4xc")]
-position = Vector2(71, 0)
-
 [node name="spike4" parent="SceneObjects/Traps" unique_id=826362544 instance=ExtResource("5_mw4xc")]
 position = Vector2(1242.0001, 930.0001)
 rotation = -3.1316016
@@ -312,15 +303,6 @@ rotation = -3.1316016
 [node name="spike5" parent="SceneObjects/Traps" unique_id=765493860 instance=ExtResource("5_mw4xc")]
 position = Vector2(1216, 930.00006)
 rotation = -3.1316016
-
-[node name="fire" parent="SceneObjects/Traps" unique_id=1123720658 instance=ExtResource("6_xa7n4")]
-position = Vector2(1176, 626)
-
-[node name="fire2" parent="SceneObjects/Traps" unique_id=474016683 instance=ExtResource("6_xa7n4")]
-position = Vector2(1217, 626)
-
-[node name="fire3" parent="SceneObjects/Traps" unique_id=2052293163 instance=ExtResource("6_xa7n4")]
-position = Vector2(1257, 626)
 
 [node name="spike6" parent="SceneObjects/Traps" unique_id=1921335279 instance=ExtResource("5_mw4xc")]
 position = Vector2(2453, 979)
@@ -342,8 +324,17 @@ rotation = -3.1316016
 position = Vector2(2676, 678)
 rotation = -3.1316016
 
+[node name="CharacterBody2D2" parent="SceneObjects/Traps" unique_id=1713127928 instance=ExtResource("8_8g4ke")]
+position = Vector2(477, 567)
+
+[node name="CharacterBody2D3" parent="SceneObjects/Traps" unique_id=36138794 instance=ExtResource("8_8g4ke")]
+position = Vector2(1276, 568)
+
+[node name="CharacterBody2D4" parent="SceneObjects/Traps" unique_id=1524224567 instance=ExtResource("8_8g4ke")]
+position = Vector2(2233, 329)
+
 [node name="Finish" parent="SceneObjects" unique_id=1567801145 instance=ExtResource("9_4k5bj")]
-position = Vector2(3280, 193)
+position = Vector2(8197, 826)
 
 [node name="MovingPlatform" parent="SceneObjects" unique_id=27370648 instance=ExtResource("8_bo4dx")]
 position = Vector2(2640, 271)

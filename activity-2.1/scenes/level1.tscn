@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rgw28p1tm7y" path="res://scenes/cherry.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://b4i7do2o4776u" path="res://game_manager.gd" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cmr6ydimlvemv" path="res://scenes/spike.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dcwrnlpypp60j" path="res://scenes/enemy.tscn" id="7_u3awl"]
 [ext_resource type="PackedScene" uid="uid://dxl18d210abxm" path="res://scenes/worldB.tscn" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://cipddwfbya31d" path="res://scenes/hud.tscn" id="9_conm7"]
 [ext_resource type="PackedScene" uid="uid://dtilg1jn3nl0a" path="res://scenes/finish.tscn" id="10_4c57u"]
@@ -264,8 +265,14 @@ position = Vector2(1553, 0)
 [node name="Area2D" parent="SceneObjects/Traps" unique_id=1589928311 instance=ExtResource("8_kek77")]
 position = Vector2(-183, 5)
 
+[node name="CharacterBody2D" parent="SceneObjects/Traps" unique_id=1713127928 instance=ExtResource("7_u3awl")]
+position = Vector2(2375, 473)
+
+[node name="CharacterBody2D2" parent="SceneObjects/Traps" unique_id=1065105916 instance=ExtResource("7_u3awl")]
+position = Vector2(1691, 182)
+
 [node name="Finish" parent="SceneObjects" unique_id=1567801145 instance=ExtResource("10_4c57u")]
-position = Vector2(2798, 146)
+position = Vector2(2798, 148)
 next_level_path = "res://scenes/level2.tscn"
 
 [node name="GameManager" type="Node" parent="." unique_id=1900851830]

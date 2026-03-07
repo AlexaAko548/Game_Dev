@@ -75,6 +75,6 @@ This project integrates user interface elements and a complete audio system into
 - Background Music: Continuous game music that plays automatically using an AudioStreamPlayer node.
 
 ### Video
-![Week 3 - Activity 1 Video](proofs/week3-act1.mp4)
+https://github.com/user-attachments/assets/65700e66-9382-4f9b-8f5b-b27cff0c018f
 
 ---

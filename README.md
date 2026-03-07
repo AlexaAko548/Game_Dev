@@ -42,7 +42,7 @@ This project handles input (keyboard/gamepad), physics bodies (rigid/kinematic),
 - Added a script for the player's movements such as running, walking, jumping, and idle.
 
 ### Screenshots
-![Week 2 - Activity 1 Screenshot](screenshots/week2-act1.png)
+![Week 2 - Activity 1 Screenshot](proofs/week2-act1.png)
 
 
 ## 🎮 Week 2: Activity 2 Level Design
@@ -57,7 +57,24 @@ This project uses tilemaps for grid-based levels, adding hazards (spikes/traps),
 - Incorporated traps and collectibles
 
 ### Screenshots
-![Week 2 - Activity 2 Screenshot](screenshots/week2-act2.png)
-![Week 2 - Activity 2 Screenshot](screenshots/week2-act2.1.png)
+![Week 2 - Activity 2 Screenshot](proofs/week2-act2.png)
+![Week 2 - Activity 2 Screenshot](proofs/week2-act2.1.png)
+
+
+## 🎮 Week 3: Activity1 UI/UX & Audio
+**Date:** February 2026
+
+### Description
+This project integrates user interface elements and a complete audio system into the 2D game prototype, providing clear player feedback through a HUD, menus, and sound.
+
+### Features
+- Heads-Up Display (HUD): A CanvasLayer interface featuring a player health bar (ProgressBar) and a real-time score tracker.
+- Menu Systems: Functional Main Menu and Game Over screens using UI containers (VBoxContainer) for easy button layouts.
+- Audio Buses: Custom audio routing to separate and mix Sound Effects (SFX) and Music volumes.
+- Sound Effects: Positional audio (AudioStreamPlayer2D) that plays when jumping, taking damage, or collecting items.
+- Background Music: Continuous game music that plays automatically using an AudioStreamPlayer node.
+
+### Video
+![Week 3 - Activity 1 Video](proofs/week3-act1.png)
 
 ---

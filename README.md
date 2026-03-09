@@ -92,6 +92,8 @@ This project introduces intelligent enemies using a Finite State Machine (FSM) t
 - Combat Logic: A hitbox that deals damage and knocks the player backward upon contact.
 
 ### Video
-https://github.com/AlexaAko548/Game_Dev/blob/main/proofs/week3-act2.mp4
+https://github.com/user-attachments/assets/33e6f539-e88c-41e2-bdc1-4fe5135b98be
+
+
 
 ---

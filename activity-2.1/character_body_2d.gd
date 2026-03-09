@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # This will hold the player so the slime knows who to chase
 var player_target: Node2D = null 
+var aggro_timer: float = 0.0
 
 # --- 3. NODE REFERENCES ---
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,7 +35,13 @@ func _physics_process(delta: float) -> void:
 		State.PATROL:
 			process_patrol()
 		State.AGGRO:
-			velocity.x = 0 # Stand completely still while yelling!
+			velocity.x = 0 # Stand completely still
+			
+			# Count down our new stopwatch using physics time!
+			aggro_timer -= delta
+			if aggro_timer <= 0:
+				current_state = State.CHASE
+				
 		State.CHASE:
 			process_chase()
 
@@ -61,7 +68,7 @@ func process_patrol() -> void:
 
 # --- AI BEHAVIOR: CHASE (PATHFINDING) ---
 func process_chase() -> void:
-	animated_sprite_2d.play("chase")
+	animated_sprite_2d.play("enemy")
 	
 	if player_target != null:
 		# Find the path: subtract enemy position from player position to get direction
@@ -95,18 +102,12 @@ func _on_detection_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_target = body
 		
-		# 1. Switch to the new AGGRO state so it stops moving
-		current_state = State.AGGRO
-		
-		# 2. Play the surprise/angry animation!
-		animated_sprite_2d.play("aggro")
-		
-		# 3. Wait right here in the code until that specific animation finishes
-		await animated_sprite_2d.animation_finished
-		
-		# 4. Make sure the player didn't already run away during the animation
-		if player_target != null:
-			current_state = State.CHASE
+		# ONLY switch to aggro if we are currently chilling in patrol mode!
+		# This prevents the loop from restarting.
+		if current_state == State.PATROL:
+			current_state = State.AGGRO
+			aggro_timer = 1.5 # Start the 1.5 second stopwatch
+			animated_sprite_2d.play("aggro")
 
 # --- SENSOR: PLAYER LEAVES VISION ---
 func _on_detection_zone_body_exited(body: Node2D) -> void:

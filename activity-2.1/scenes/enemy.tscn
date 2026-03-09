@@ -78,8 +78,8 @@ size = Vector2(59, 61)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ile5s"]
 size = Vector2(69, 67)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 116.01724
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(481, 167.5)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1713127928]
 position = Vector2(1326, 403)
@@ -106,7 +106,7 @@ metadata/_edit_group_ = true
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=1967693279]
 position = Vector2(45, 84)
-target_position = Vector2(51, 1)
+target_position = Vector2(52, 2)
 metadata/_edit_group_ = true
 
 [node name="WallCheck" type="RayCast2D" parent="." unique_id=912695316]
@@ -117,8 +117,8 @@ metadata/_edit_group_ = true
 [node name="DetectionZone" type="Area2D" parent="." unique_id=1616808857]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=912712388]
-position = Vector2(49, 67)
-shape = SubResource("CircleShape2D_md0e3")
+position = Vector2(54, 61)
+shape = SubResource("RectangleShape2D_md0e3")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]

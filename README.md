@@ -61,7 +61,7 @@ This project uses tilemaps for grid-based levels, adding hazards (spikes/traps),
 ![Week 2 - Activity 2 Screenshot](proofs/week2-act2.1.png)
 
 
-## 🎮 Week 3: Activity1 UI/UX & Audio
+## 🎮 Week 3: Activity 1 UI/UX & Audio
 **Date:** February 2026
 
 ### Description
@@ -76,5 +76,22 @@ This project integrates user interface elements and a complete audio system into
 
 ### Video
 https://github.com/user-attachments/assets/65700e66-9382-4f9b-8f5b-b27cff0c018f
+
+
+## 🎮 Week 3: Activity 2 AI & Enemies
+**Date:** February 2026
+
+### Description
+This project introduces intelligent enemies using a Finite State Machine (FSM) to switch between patrol, aggro, and chase behaviors based on the player's position.
+
+### Features
+- AI State Machine: A logic system that seamlessly switches the enemy between Patrol, Aggro, and Chase modes.
+- Edge Detection: RayCast2D sensors that stop the enemy from walking off ledges or into walls.
+- Player Detection: An Area2D zone that spots the player and triggers a brief warning animation.
+- Pathfinding: Math logic that makes the enemy actively track and run toward the player.
+- Combat Logic: A hitbox that deals damage and knocks the player backward upon contact.
+
+### Video
+https://github.com/AlexaAko548/Game_Dev/blob/main/proofs/week3-act2.mp4
 
 ---

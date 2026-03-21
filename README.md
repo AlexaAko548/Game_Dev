@@ -108,9 +108,10 @@ A simple 3D level built in Godot using free, low-poly assets. The project demons
 - FPS Optimization: Used Godot's built-in profiler tool to confirm the game runs smoothly at 60 FPS by utilizing simple collision shapes and optimized assets.
 
 ### Screenshots & Video
-![Week 4 - Activity 1 Screenshot](proofs/week4-act1.png)
-![Week 4 - Activity 1 Screenshot](proofs/week4-act1.1.png)
-https://github.com/user-attachments/assets/f96bd807-1701-41f1-86db-25df949db81b
+![Week 4 - Activity 1 Screenshot](proofs/week4_act1.png)
+![Week 4 - Activity 1 Screenshot](proofs/week4_act1.1.png)
+https://github.com/user-attachments/assets/915e985e-4c4a-4907-a8e1-78a075ff33ea
+
 
 
 

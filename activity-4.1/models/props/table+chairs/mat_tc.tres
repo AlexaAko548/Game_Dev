@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bguqy0y6ycibq"]
+
+[ext_resource type="Texture2D" uid="uid://juu2ew3ytkn1" path="res://models/props/barrel/barrel_texture.png" id="1_1mc5o"]
+
+[resource]
+albedo_color = Color(0.8672607, 0.86726063, 0.8672606, 1)
+albedo_texture = ExtResource("1_1mc5o")

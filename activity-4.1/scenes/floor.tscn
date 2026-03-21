@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://okltyw4pho2y"]
+
+[ext_resource type="PackedScene" uid="uid://ddakxep13uuv0" path="res://models/building/floor_wood.glb" id="1_ukw5w"]
+[ext_resource type="Material" uid="uid://cqo1xg5qe3f5q" path="res://models/props/barrel/texture.tres" id="2_kuqtn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kuqtn"]
+size = Vector3(4.033081, 0.18066406, 3.9352417)
+
+[node name="Floor" type="StaticBody3D" unique_id=811239928]
+
+[node name="floor_wood" parent="." unique_id=334934987 instance=ExtResource("1_ukw5w")]
+
+[node name="floor_wood_large_dark" parent="floor_wood" index="0" unique_id=590627405]
+surface_material_override/0 = ExtResource("2_kuqtn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1108840917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04949951, -0.06542969, -0.007171631)
+shape = SubResource("BoxShape3D_kuqtn")
+
+[editable path="floor_wood"]

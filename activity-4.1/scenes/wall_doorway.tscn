@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dnrhjnleioq8"]
+
+[ext_resource type="PackedScene" uid="uid://bi65oucaw152d" path="res://models/building/wall/wall_doorway.glb" id="1_vvqjt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_787ka"]
+size = Vector3(1.1209564, 4.17334, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvqjt"]
+size = Vector3(1.7983055, 1.1091003, 1)
+
+[node name="Wall_doorway" type="StaticBody3D" unique_id=865212045]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1795520767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4117095, 1.9591212, -0.036145926)
+shape = SubResource("BoxShape3D_787ka")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=198162009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.526516, 1.9591212, -0.036145926)
+shape = SubResource("BoxShape3D_787ka")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=231019520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037973404, 3.4905586, -0.036145926)
+shape = SubResource("BoxShape3D_vvqjt")
+
+[node name="wall_doorway2" parent="." unique_id=86333579 instance=ExtResource("1_vvqjt")]
+
+[node name="wall_doorway_door" parent="wall_doorway2/wall_doorway" parent_id_path=PackedInt32Array(86333579, 1736240829) index="0" unique_id=866361727]
+transform = Transform3D(0.17364822, 0, 0.9848077, 0, 1, 0, -0.9848077, 0, 0.17364822, -0.8200989, 0, 0)
+
+[editable path="wall_doorway2"]

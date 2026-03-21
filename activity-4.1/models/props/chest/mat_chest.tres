@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bk42r5m6p2bfo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_skuil"]
+load_path = "res://.godot/imported/dungeon_albedo.png-9087447aed901c67c83f481510a6d1ed.s3tc.ctex"
+
+[resource]
+albedo_color = Color(0.6715141, 0.67151415, 0.671514, 1)
+albedo_texture = SubResource("CompressedTexture2D_skuil")

@@ -95,5 +95,23 @@ This project introduces intelligent enemies using a Finite State Machine (FSM) t
 https://github.com/user-attachments/assets/33e6f539-e88c-41e2-bdc1-4fe5135b98be
 
 
+## 🎮 Week 4: Activity 1 3D Basics & Optimization
+**Date:** March 2026
+
+### Description
+A simple 3D level built in Godot using free, low-poly assets. The project demonstrates basic 3D node setup, dynamic lighting, and performance optimization to maintain a steady 60 FPS.
+
+### Features
+- 3D Environment: Built a custom dungeon layout using lightweight 3D meshes (floors, walls, and props).
+- Player & Camera: Implemented a ProtoController with a basic capsule mesh and a Camera3D node to follow the player.
+- Lighting: Used a DirectionalLight3D to cast shadows, plus a skybox for the background environment.
+- FPS Optimization: Used Godot's built-in profiler tool to confirm the game runs smoothly at 60 FPS by utilizing simple collision shapes and optimized assets.
+
+### Screenshots & Video
+![Week 4 - Activity 1 Screenshot](proofs/week4-act1.png)
+![Week 4 - Activity 1 Screenshot](proofs/week4-act1.1.png)
+https://github.com/user-attachments/assets/f96bd807-1701-41f1-86db-25df949db81b
+
+
 
 ---

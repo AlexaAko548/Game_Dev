@@ -110,6 +110,7 @@ A simple 3D level built in Godot using free, low-poly assets. The project demons
 ### Screenshots & Video
 ![Week 4 - Activity 1 Screenshot](proofs/week4_act1.png)
 ![Week 4 - Activity 1 Screenshot](proofs/week4_act1.1.png)
+
 https://github.com/user-attachments/assets/915e985e-4c4a-4907-a8e1-78a075ff33ea
 
 

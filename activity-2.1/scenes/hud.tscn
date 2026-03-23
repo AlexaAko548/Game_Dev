@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://y6ofch1kg6gv" path="res://scenes/hud.gd" id="1_ahhtf"]
 [ext_resource type="FontFile" uid="uid://dlwdg0uuth3dp" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://ck5cpbscjpvvf" path="res://assets/images/Heart.png" id="3_5ysmq"]
+[ext_resource type="Texture2D" uid="uid://cenvlsyyd3j4s" path="res://assets/images/direction_left.png" id="4_047uy"]
+[ext_resource type="Texture2D" uid="uid://b3wgtfrmxwos3" path="res://assets/images/direction_right.png" id="5_5pdws"]
+[ext_resource type="Texture2D" uid="uid://bk3gix45dkoyc" path="res://assets/images/button_circle.png" id="6_hd3ao"]
 
 [node name="HUD" type="CanvasLayer" unique_id=167097393]
 script = ExtResource("1_ahhtf")
@@ -13,15 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1756045281]
-layout_mode = 1
-offset_left = 22.0
-offset_top = 18.0
-offset_right = 142.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("2_oo0fn")
-theme_override_font_sizes/font_size = 20
 
 [node name="Label" type="Label" parent="Control" unique_id=154609037]
 layout_mode = 1
@@ -38,3 +33,45 @@ theme_override_font_sizes/font_size = 25
 text = "placeholder"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HeartsContainer" type="HBoxContainer" parent="Control" unique_id=300084023]
+layout_mode = 1
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 186.0
+offset_bottom = 74.0
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HeartsContainer" unique_id=584214702]
+layout_mode = 2
+texture = ExtResource("3_5ysmq")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HeartsContainer" unique_id=579903376]
+layout_mode = 2
+texture = ExtResource("3_5ysmq")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/HeartsContainer" unique_id=931504678]
+layout_mode = 2
+texture = ExtResource("3_5ysmq")
+expand_mode = 2
+
+[node name="LeftButton" type="TouchScreenButton" parent="." unique_id=485123369]
+position = Vector2(85, 547)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("4_047uy")
+action = "left"
+
+[node name="RightButton" type="TouchScreenButton" parent="." unique_id=672154071]
+position = Vector2(206, 547)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("5_5pdws")
+action = "right"
+
+[node name="JumpButton" type="TouchScreenButton" parent="." unique_id=1088455700]
+position = Vector2(1084, 547)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("6_hd3ao")
+action = "jump"

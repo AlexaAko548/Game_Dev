@@ -1,8 +1,8 @@
 extends CharacterBody2D
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
-var max_health: int = 100
-var current_health: int = 100
+var max_health: int = 3
+var current_health: int = 3
 var is_hurt: bool = false
 var is_dead: bool = false
 const GAME_OVER_SCREEN = preload("res://scenes/game_over_scene.tscn")

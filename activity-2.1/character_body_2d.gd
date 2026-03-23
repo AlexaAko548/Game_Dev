@@ -119,4 +119,4 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if body.has_method("take_damage"):
-			body.take_damage(20, global_position.x)
+			body.take_damage(1, global_position.x)
